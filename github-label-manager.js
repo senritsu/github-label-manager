@@ -20,10 +20,12 @@ const findAll = (selector, context) => (context || document).querySelectorAll(se
 
 const newLabelButton = find('.labels-list .subnav button.js-details-target')
 const importButton = document.createElement('button')
+importButton.id = 'import-labels'
 importButton.classList.add('btn', 'btn-default', 'right', 'select-menu-button')
 importButton.textContent = 'Import '
 
 const exportButton = document.createElement('button')
+importButton.id = 'export-labels'
 exportButton.classList.add('btn', 'btn-default', 'right')
 exportButton.textContent = 'Export'
 
@@ -38,6 +40,7 @@ exportButton.appendChild(exportLink)
 const newLabelForm = find('form.new-label')
 
 const importForm = document.createElement('form')
+importForm.id = 'label-import-toolbar'
 importForm.classList.add('form')
 importForm.style.padding = '10px'
 importForm.style.marginBottom = '15px'
@@ -46,6 +49,7 @@ importForm.style.border = '1px solid #e5e5e5'
 importForm.style.display = 'none'
 
 const importInput = document.createElement('input')
+importInput.id = 'label-import-file'
 importInput.classList.add('form-control', 'right')
 importInput.type = 'file'
 importForm.appendChild(importInput)
@@ -60,6 +64,7 @@ const clearAllLabel = document.createElement('label')
 clearAllDiv.appendChild(clearAllLabel)
 
 const clearAllCheckbox = document.createElement('input')
+clearAllCheckbox.id = 'clear-labels-before-import'
 clearAllCheckbox.type = 'checkbox'
 clearAllLabel.appendChild(clearAllCheckbox)
 clearAllLabel.appendChild(document.createTextNode(' Clear all existing labels first'))
