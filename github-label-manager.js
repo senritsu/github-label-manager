@@ -96,9 +96,11 @@ function setup() {
         const reader = new FileReader()
         reader.onload = (event) => {
             const labels = JSON.parse(reader.result)
-            if(clearAllCheckbox.value) {
+
+            if(clearAllCheckbox.checked) {
                 deleteAllLabels()
             }
+
             for(const label of labels) {
                 addLabel(label)
             }
